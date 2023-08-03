@@ -28,6 +28,7 @@ class FirstComponentList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> children = [
+      const Testword(),
       const Actions(),
       colDivider,
       const Communication(),
@@ -216,6 +217,64 @@ class Actions extends StatelessWidget {
     ]);
   }
 }
+
+class Testword extends StatelessWidget {
+  const Testword({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const ComponentGroupDecoration(
+        label: 'TestWord', children: <Widget>[Btutest()]);
+  }
+}
+
+class Btutest extends StatefulWidget {
+  const Btutest({super.key});
+  @override
+  State<Btutest> createState() => _Btuss();
+}
+
+class _Btuss extends State<Btutest> {
+  @override
+  Widget build(BuildContext context) {
+    return const ComponentDecoration(
+        label: 'Head',
+        child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(onPressed: null, child: Text("1")),
+                TextButton(onPressed: null, child: Text("2")),
+                TextButton(onPressed: null, child: Text("3")),
+                TextButton(onPressed: null, child: Text("4")),
+                TextButton(onPressed: null, child: Text("5"))
+              ],
+            )));
+  }
+}
+
+// class _ButtonsState extends State<Buttons> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const ComponentDecoration(
+//       label: 'Common buttons',
+//       tooltipMessage:
+//           'Use ElevatedButton, FilledButton, FilledButton.tonal, OutlinedButton, or TextButton',
+//       child: SingleChildScrollView(
+//         scrollDirection: Axis.horizontal,
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceAround,
+//           children: <Widget>[
+//             ButtonsWithoutIcon(isDisabled: false),
+//             ButtonsWithIcon(),
+//             ButtonsWithoutIcon(isDisabled: true),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class Communication extends StatelessWidget {
   const Communication({super.key});
@@ -460,6 +519,16 @@ class FloatingActionButtons extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class FloatingActionButtonsS extends StatefulWidget {
+  const FloatingActionButtonsS({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
 
